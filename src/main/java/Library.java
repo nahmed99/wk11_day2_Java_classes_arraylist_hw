@@ -36,18 +36,31 @@ public class Library {
 
 
     public void addBook(Book book) {
-        if (getCapacity() > countBooks())
+        if (getCapacity() > countBooks()) {
             books.add(book);
+            addGenreCount(book); // update the appropriate books by genre count
+        }
     }
 
-    public void sortBooksByGenre() {
-        for (Book book : books) {
-            if (booksByGenre.containsKey(book.getGenre())) {
-                booksByGenre.put(book.getGenre(), booksByGenre.get(book.getGenre()) + 1);
-            } else {
-                booksByGenre.put(book.getGenre(), 1);
-            }
+    // Replaced the following code with different logic - but keeping (commented) in
+    // for future reference!
+//    public void sortBooksByGenre() {
+//        for (Book book : books) {
+//            if (booksByGenre.containsKey(book.getGenre())) {
+//                booksByGenre.put(book.getGenre(), booksByGenre.get(book.getGenre()) + 1);
+//            } else {
+//                booksByGenre.put(book.getGenre(), 1);
+//            }
+//        }
+//    }
+
+    public void addGenreCount(Book book) {
+        if (booksByGenre.containsKey(book.getGenre())) {
+            booksByGenre.put(book.getGenre(), booksByGenre.get(book.getGenre()) + 1);
+        } else {
+            booksByGenre.put(book.getGenre(), 1);
         }
+
     }
 
     public int getNoBooksForGenre(String genre) {

@@ -69,9 +69,12 @@ public class LibraryTest {
         langsideLibrary.addBook(computers);
 
         // Create the genre tracker
-        langsideLibrary.sortBooksByGenre();
+        //langsideLibrary.sortBooksByGenre();
 
+        assertEquals(1, langsideLibrary.getNoBooksForGenre("Sports"));
+        assertEquals(2, langsideLibrary.getNoBooksForGenre("Botany"));
         assertEquals(5, langsideLibrary.getNoBooksForGenre("Computers"));
+
     }
 
 }
