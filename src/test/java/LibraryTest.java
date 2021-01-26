@@ -47,4 +47,31 @@ public class LibraryTest {
         assertEquals(3, langsideLibrary.countBooks());
     }
 
+    @Test
+    public void canTrackBooksByGenre() {
+
+        langsideLibrary.setCapacity(15);
+
+        // all of the following books should be added to the library.
+        langsideLibrary.addBook(goodBadRubbish);
+
+        langsideLibrary.addBook(flowers);
+        langsideLibrary.addBook(flowers);
+
+        langsideLibrary.addBook(cars);
+        langsideLibrary.addBook(cars);
+        langsideLibrary.addBook(cars);
+
+        langsideLibrary.addBook(computers);
+        langsideLibrary.addBook(computers);
+        langsideLibrary.addBook(computers);
+        langsideLibrary.addBook(computers);
+        langsideLibrary.addBook(computers);
+
+        // Create the genre tracker
+        langsideLibrary.sortBooksByGenre();
+
+        assertEquals(5, langsideLibrary.getNoBooksForGenre("Computers"));
+    }
+
 }
