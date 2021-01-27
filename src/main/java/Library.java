@@ -54,7 +54,7 @@ public class Library {
 //        }
 //    }
 
-    public void addGenreCount(Book book) {
+    private void addGenreCount(Book book) {
         if (booksByGenre.containsKey(book.getGenre())) {
             booksByGenre.put(book.getGenre(), booksByGenre.get(book.getGenre()) + 1);
         } else {

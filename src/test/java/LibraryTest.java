@@ -42,7 +42,7 @@ public class LibraryTest {
         langsideLibrary.addBook(cars);
         assertEquals(3, langsideLibrary.countBooks());
 
-        // the next book should be be added to the library, as capacity is only 3.
+        // the next book should NOT be be added to the library, as capacity is only 3.
         langsideLibrary.addBook(computers);
         assertEquals(3, langsideLibrary.countBooks());
     }
